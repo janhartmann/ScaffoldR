@@ -13,10 +13,10 @@ Param(
 . "./BuildFunctions.ps1"
 
 # The solution we are building
-$solution = "NerveFramework.sln"
-$assemblies = "NerveFramework", "NerveFramework.EntityFramework"
-$testAssemblies = "NerveFramework.UnitTests", "NerveFramework.EntityFramework.UnitTests"
-$releaseAssemblies = "NerveFramework", "NerveFramework.EntityFramework"
+$solution = "ScaffoldR.sln"
+$assemblies = "ScaffoldR", "ScaffoldR.EntityFramework"
+$testAssemblies = "ScaffoldR.Tests", "ScaffoldR.EntityFramework.Tests"
+$releaseAssemblies = "ScaffoldR", "ScaffoldR.EntityFramework"
 
 # Start by changing the assembly version
 Write-Host "Changing the assembly versions to '$version'..."
@@ -31,15 +31,15 @@ if ($build) {
 
 # Change dependency version on all depending assemblies
 if ($nuspec) {
-    Write-Host "Changing the NerveFramework(s) NuGet Spec version dependencies to '$version'..."
-    Get-ChildItem $assemblies -Filter "NerveFramework*.nuspec" -Recurse | 
-        % { Update-NugetSpecDependencyVersion $_.FullName "NerveFramework" $version }
+    Write-Host "Changing the ScaffoldR(s) NuGet Spec version dependencies to '$version'..."
+    Get-ChildItem $assemblies -Filter "ScaffoldR*.nuspec" -Recurse | 
+        % { Update-NugetSpecDependencyVersion $_.FullName "ScaffoldR" $version }
 }
 
 # Pack the assemblies and move to output folder
 if ($pack) {
     Write-Host "Packaging projects..."
-    Get-ChildItem $releaseAssemblies -Filter "NerveFramework*.csproj" -Recurse | 
+    Get-ChildItem $releaseAssemblies -Filter "ScaffoldR*.csproj" -Recurse | 
         % { Invoke-PackNuget $_.FullName $configuration $outputFolder } 
 }
 
