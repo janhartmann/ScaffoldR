@@ -29,7 +29,7 @@ var container = new Container();
 container.Options.DefaultScopedLifestyle = Lifestyle.CreateHybrid(() =>
 	container.GetCurrentLifetimeScope() != null,
 	new LifetimeScopeLifestyle(),
-	new WebRequestLifestyle()
+	new WebRequestLifestyle() // Example is for .NET MVC application
 );
 
 container.RegisterScaffoldR(settings =>
@@ -46,6 +46,6 @@ FluentValidationModelValidatorProvider.Configure(provider => {
 });
 ```
 
-In the registration above we tell ScaffoldR to pick up the implementations in the defined assemblies. Also note the required custom lifestyle configuration. We also tell Fluent Validation to use Simple Injector for finding the validation classes, using the `SimpleInjectorValidatorFactory`. The example is for a .NET MVC application.
+In the registration above we tell ScaffoldR to pick up the implementations in the defined assemblies. Also note the required custom lifestyle configuration. Next, making Fluent Validation use Simple Injector for finding the validation classes, using the `SimpleInjectorValidatorFactory`.
 
 ### Examples
