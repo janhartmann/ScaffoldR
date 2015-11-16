@@ -15,7 +15,7 @@ You should install [ScaffoldR with NuGet](https://www.nuget.org/packages/Scaffol
 
 This command from Package Manager Console will download and install ScaffoldR and all required dependencies.
 
-Register ScaffoldR in the Simple Injector container during startup:
+You should register ScaffoldR in the Simple Injector container during startup:
 
 ```cs
 var container = new Container();
