@@ -13,7 +13,7 @@ A great good starting point is these articles:
 
 ### Dependencies 
 **[Simple Injector](https://simpleinjector.org)**<br />
--Simple Injector is an easy, flexible and fast dependency injection library which ScaffoldR integrates heavily into.
+Simple Injector is an easy, flexible and fast dependency injection library which ScaffoldR integrates heavily into.
 
 **[Fluent Validation](https://fluentvalidation.codeplex.com)**<br />
 Fluent Validation (FV) is a small validation library for .NET that uses a fluent interface and lambda expressions for building validation rules for your business objects. Nerve Framework uses FV in its validation processor.
