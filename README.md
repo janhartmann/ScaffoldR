@@ -39,19 +39,13 @@ container.RegisterScaffoldR(settings =>
 	settings.TransactionAssemblies = new[] { Assembly.GetExecutingAssembly() };
 	settings.ViewModelAssemblies = new[] { Assembly.GetExecutingAssembly() };
 });
-```
 
-In the registration above we tell ScaffoldR to pick up the implementations in the defined assemblies. Also note the required custom lifestyle configuration.
-
-You should also register the Fluent Validation classes in the Simple Injector container, using the `SimpleInjectorValidatorFactory`:
-
-```cs
 FluentValidationModelValidatorProvider.Configure(provider => {
 	provider.ValidatorFactory = new SimpleInjectorValidatorFactory(container);
 	provider.AddImplicitRequiredValidator = false;
 });
 ```
 
-This above example is for a .NET MVC application.
+In the registration above we tell ScaffoldR to pick up the implementations in the defined assemblies. Also note the required custom lifestyle configuration. We also tell Fluent Validation to use Simple Injector for finding the validation classes, using the `SimpleInjectorValidatorFactory`. The example is for a .NET MVC application.
 
 ### Examples
