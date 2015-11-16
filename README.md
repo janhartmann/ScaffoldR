@@ -2,7 +2,7 @@
 
 ScaffoldR is a [SOLID](https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29) platform for structuring or scaffolding .NET applications. ScaffoldR supports commands, queries, events, repositories and validation with intelligent dispatching via C# generic variance.
 
-It is recommended to have some basic knowledge of CQRS (Command Query Responsibility Segregation). A good starting point is these articles:
+It is recommended to have some basic knowledge of CQRS (Command Query Responsibility Segregation) and Dependency Injection. A good starting point is these articles:
 
 * [Meanwhile... on the command side of my architecture](https://www.cuttingedge.it/blogs/steven/pivot/entry.php?id=91)
 * [Meanwhile... on the query side of my architecture](https://www.cuttingedge.it/blogs/steven/pivot/entry.php?id=92)
@@ -29,7 +29,7 @@ var container = new Container();
 container.Options.DefaultScopedLifestyle = Lifestyle.CreateHybrid(() =>
 	container.GetCurrentLifetimeScope() != null,
 	new LifetimeScopeLifestyle(),
-	new WebRequestLifestyle() // This example is a MVC application
+	new WebRequestLifestyle()
 );
 
 container.RegisterScaffoldR(settings =>
@@ -40,5 +40,7 @@ container.RegisterScaffoldR(settings =>
 	settings.ViewModelAssemblies = new[] { Assembly.GetExecutingAssembly() };
 });
 ```
+
+In the registration above we tell ScaffoldR to pick up the implementations in the defined assemblies. Also note the required custom lifestyle configuration. This example is a .NET MVC application, which is why it uses the `WebRequestLifestyle`.
 
 ### Examples
