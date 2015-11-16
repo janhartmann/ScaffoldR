@@ -15,6 +15,25 @@ You should install [ScaffoldR with NuGet](https://www.nuget.org/packages/Scaffol
 
 This command from Package Manager Console will download and install ScaffoldR and all required dependencies.
 
+Next is to wire up the application on startup.
+
+```cs
+var container = new Container();
+container.Options.DefaultScopedLifestyle = Lifestyle.CreateHybrid(() =>
+			container.GetCurrentLifetimeScope() != null,
+			new LifetimeScopeLifestyle(),
+			new WebRequestLifestyle() // This example is a MVC application
+);
+container.RegisterScaffoldR(settings =>
+{
+	settings.EventAssemblies = new[] { Assembly.GetExecutingAssembly() };
+	settings.FluentValidationAssemblies = new[] { Assembly.GetExecutingAssembly() };
+	settings.TransactionAssemblies = new[] { Assembly.GetExecutingAssembly() };
+	settings.ViewModelAssemblies = new[] { Assembly.GetExecutingAssembly() };
+});
+```
+
+
 ### Dependencies 
 **[Simple Injector](https://simpleinjector.org)**<br />
 Simple Injector is an easy, flexible and fast dependency injection library which ScaffoldR integrates heavily into.
