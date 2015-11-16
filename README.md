@@ -1,6 +1,6 @@
 # ScaffoldR
 
-Supports commands, queries, events, repository and validation with intelligent dispatching via C# generic variance.
+Supports commands, queries, events, repositories and validation with intelligent dispatching via C# generic variance.
 
 It is recommended to have some basic knowledge of CQRS (Command Query Responsibility Segregation). A great good starting point is these articles:
 
