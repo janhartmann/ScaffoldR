@@ -7,7 +7,13 @@ It is recommended to have some basic knowledge of CQRS (Command Query Responsibi
 * [Meanwhile... on the command side of my architecture](https://www.cuttingedge.it/blogs/steven/pivot/entry.php?id=91)
 * [Meanwhile... on the query side of my architecture](https://www.cuttingedge.it/blogs/steven/pivot/entry.php?id=92)
 
-### Installation
+### Installing ScaffoldR
+
+You should install [ScaffoldR with NuGet](https://www.nuget.org/packages/ScaffoldR):
+
+    Install-Package ScaffoldR
+
+This command from Package Manager Console will download and install ScaffoldR and all required dependencies.
 
 ### Dependencies 
 **[Simple Injector](https://simpleinjector.org)**<br />
