@@ -41,6 +41,15 @@ container.RegisterScaffoldR(settings =>
 });
 ```
 
-In the registration above we tell ScaffoldR to pick up the implementations in the defined assemblies. Also note the required custom lifestyle configuration. This example is a .NET MVC application, which is why it uses the `WebRequestLifestyle`.
+In the registration above we tell ScaffoldR to pick up the implementations in the defined assemblies. Also note the required custom lifestyle configuration. This example is a .NET MVC application.
+
+You should also register the Fluent Validation classes in the Simple Injector container, using the `SimpleInjectorValidatorFactory`:
+
+```cs
+FluentValidationModelValidatorProvider.Configure(provider => {
+	provider.ValidatorFactory = new SimpleInjectorValidatorFactory(container);
+	provider.AddImplicitRequiredValidator = false;
+});
+```
 
 ### Examples
