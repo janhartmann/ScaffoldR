@@ -24,7 +24,9 @@ This command from Package Manager Console will download and install ScaffoldR an
 
 ### Getting Started
 
-You should register ScaffoldR in the Simple Injector container during startup. In the registration below, we configure the default scope of the container and register the ScaffoldR into it. We also make Fluent Validation use Simple Injector for finding the validation classes, using the `SimpleInjectorValidatorFactory`:
+You should register ScaffoldR in the Simple Injector container during startup. In the registration below, we configure the default scope of the container and register the ScaffoldR into it. 
+
+We also make Fluent Validation use Simple Injector for finding the validation classes, using the `SimpleInjectorValidatorFactory`:
 
 ```cs
 var container = new Container();
