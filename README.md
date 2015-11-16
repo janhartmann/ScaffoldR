@@ -41,7 +41,7 @@ container.RegisterScaffoldR(settings =>
 });
 ```
 
-In the registration above we tell ScaffoldR to pick up the implementations in the defined assemblies. Also note the required custom lifestyle configuration. This example is a .NET MVC application.
+In the registration above we tell ScaffoldR to pick up the implementations in the defined assemblies. Also note the required custom lifestyle configuration.
 
 You should also register the Fluent Validation classes in the Simple Injector container, using the `SimpleInjectorValidatorFactory`:
 
@@ -51,5 +51,7 @@ FluentValidationModelValidatorProvider.Configure(provider => {
 	provider.AddImplicitRequiredValidator = false;
 });
 ```
+
+This above example is for a .NET MVC application.
 
 ### Examples
