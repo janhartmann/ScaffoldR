@@ -52,7 +52,9 @@ FluentValidationModelValidatorProvider.Configure(provider => {
 
 ### Examples
 
-In this example, we create a command with the nessecery properties to create a cup of coffee. A validator is attached to the command, which validates the command can be executed before the actual execution. Finally, we have the handler which does the business and creates the entity (Coffee) in the database.
+In this example, we create a command with the nessecery properties to create a cup of coffee. A validator is attached to the command, which validates the command can be executed before the actual execution. 
+
+Finally, we have the handler which does the business and creates the entity (Coffee) in the database.
 
 ```cs
 /// <summary>
@@ -71,7 +73,10 @@ public class ValidateMakeCoffee : AbstractValidator<MakeCoffee>
 {
 	public ValidateMakeCoffee()
 	{
-		RuleFor(coffee => coffee.Strength).NotEmpty().GreaterThan(0);
+		RuleFor(coffee => coffee.Strength)
+                    .NotEmpty()
+                    .GreaterThan(0)
+                    .LessThanOrEqualTo(10);
 	}
 }
 
