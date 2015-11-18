@@ -51,3 +51,51 @@ FluentValidationModelValidatorProvider.Configure(provider => {
 ```
 
 ### Examples
+
+In this example, we create a command with the nessecery properties to create a cup of coffee. A validator is attached to the command, which validates the command can be executed before the actual execution. Finally, we have the handler which does the business and creates the entity (Coffee) in the database.
+
+```cs
+/// <summary>
+/// Create a cup of coffee.
+/// </summary>
+public class MakeCoffee : ICommand
+{
+	public int Strength { get; set; }
+	public bool WithMilk { get; set; }
+}
+
+/// <summary>
+/// Validates the coffee command, before executing it.
+/// </summary>
+public class ValidateMakeCoffee : AbstractValidator<MakeCoffee>
+{
+	public ValidateMakeCoffee()
+	{
+		RuleFor(coffee => coffee.Strength).NotEmpty().GreaterThan(0);
+	}
+}
+
+/// <summary>
+/// Create the cup of coffee and save it in the database.
+/// </summary>
+public class HandleMakeCoffee : IHandleCommand<MakeCoffee>
+{
+	private readonly IEntityWriter<Coffee> _entityWriter;
+
+	public HandleMakeCoffee(IEntityWriter<Coffee> entityWriter)
+	{
+		_entityWriter = entityWriter;
+	}
+
+	public void Handle(MakeCoffee command)
+	{
+		var coffee = new Coffee
+		{
+			Strength = command.Strength,
+			Milk = command.WithMilk
+		};
+
+		_entityWriter.Save(coffee);
+	}
+}
+```
