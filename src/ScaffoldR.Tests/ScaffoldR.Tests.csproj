@@ -81,6 +81,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Infrastructure\Commands\CompositionRootTests.cs" />
     <Compile Include="Infrastructure\CompositionRoot\CompositionRootFixture.cs" />
     <Compile Include="Infrastructure\CompositionRoot\CompositionRootTests.cs" />
     <Compile Include="Infrastructure\Entities\CompositionRootTests.cs" />
@@ -93,18 +94,18 @@
     <Compile Include="Infrastructure\FluentValidation\ValidateCommandDecoratorTests.cs" />
     <Compile Include="Infrastructure\FluentValidation\ValidateQueryDecoratorTests.cs" />
     <Compile Include="Infrastructure\FluentValidation\ValidationProcessorTests.cs" />
-    <Compile Include="Infrastructure\Transactions\CommandEventProcessingDecoratorTests.cs" />
-    <Compile Include="Infrastructure\Transactions\CommandLifetimeScopeDecoratorTests.cs" />
-    <Compile Include="Infrastructure\Transactions\CommandProcessorTests.cs" />
-    <Compile Include="Infrastructure\Transactions\CommandTransactionDecoratorTests.cs" />
-    <Compile Include="Infrastructure\Transactions\CompositionRootTests.cs" />
-    <Compile Include="Infrastructure\Transactions\Fakes\FakeCommandWithoutValidator.cs" />
-    <Compile Include="Infrastructure\Transactions\Fakes\FakeCommandWithValidator.cs" />
-    <Compile Include="Infrastructure\Transactions\Fakes\FakeQueryWithoutValidator.cs" />
-    <Compile Include="Infrastructure\Transactions\Fakes\FakeQueryWithValidator.cs" />
-    <Compile Include="Infrastructure\Transactions\QueryEventProcessingDecoratorTests.cs" />
-    <Compile Include="Infrastructure\Transactions\QueryLifetimeScopeDecoratorTests.cs" />
-    <Compile Include="Infrastructure\Transactions\QueryProcessorTests.cs" />
+    <Compile Include="Infrastructure\Commands\CommandEventProcessingDecoratorTests.cs" />
+    <Compile Include="Infrastructure\Commands\CommandLifetimeScopeDecoratorTests.cs" />
+    <Compile Include="Infrastructure\Commands\CommandProcessorTests.cs" />
+    <Compile Include="Infrastructure\Commands\CommandTransactionDecoratorTests.cs" />
+    <Compile Include="Infrastructure\Queries\CompositionRootTests.cs" />
+    <Compile Include="Infrastructure\Commands\Fakes\FakeCommandWithoutValidator.cs" />
+    <Compile Include="Infrastructure\Commands\Fakes\FakeCommandWithValidator.cs" />
+    <Compile Include="Infrastructure\Queries\Fakes\FakeQueryWithoutValidator.cs" />
+    <Compile Include="Infrastructure\Queries\Fakes\FakeQueryWithValidator.cs" />
+    <Compile Include="Infrastructure\Queries\QueryEventProcessingDecoratorTests.cs" />
+    <Compile Include="Infrastructure\Queries\QueryLifetimeScopeDecoratorTests.cs" />
+    <Compile Include="Infrastructure\Queries\QueryProcessorTests.cs" />
     <Compile Include="Infrastructure\Views\Fakes\FakeViewModel.cs" />
     <Compile Include="Infrastructure\Views\ViewModelProcessorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,6 +118,9 @@
       <Project>{60AC8712-CFC6-4065-93A4-7134C74F88F6}</Project>
       <Name>ScaffoldR</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructure\Transactions\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

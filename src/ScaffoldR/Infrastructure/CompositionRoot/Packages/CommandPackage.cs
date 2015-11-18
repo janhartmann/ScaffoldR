@@ -1,6 +1,8 @@
 ﻿using System.Reflection;
+using ScaffoldR.Core.Commands;
 using ScaffoldR.Core.Events;
 using ScaffoldR.Core.Transactions;
+using ScaffoldR.Infrastructure.Commands;
 using ScaffoldR.Infrastructure.FluentValidation;
 using ScaffoldR.Infrastructure.Transactions;
 using SimpleInjector;

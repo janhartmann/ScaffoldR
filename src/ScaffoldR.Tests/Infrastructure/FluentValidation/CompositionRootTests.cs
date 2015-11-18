@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using ScaffoldR.Core.Validation;
 using ScaffoldR.Infrastructure.FluentValidation;
+using ScaffoldR.Tests.Infrastructure.Commands.Fakes;
 using ScaffoldR.Tests.Infrastructure.CompositionRoot;
-using ScaffoldR.Tests.Infrastructure.Transactions.Fakes;
 using SimpleInjector;
 using Xunit;
 using CascadeMode = FluentValidation.CascadeMode;

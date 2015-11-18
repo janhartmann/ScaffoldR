@@ -1,6 +1,8 @@
 ﻿using System.Reflection;
 using FluentValidation;
+using ScaffoldR.Core.Commands;
 using ScaffoldR.Core.Events;
+using ScaffoldR.Core.Queries;
 using ScaffoldR.Core.Transactions;
 using ScaffoldR.Core.Views;
 

@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
+using ScaffoldR.Tests.Infrastructure.Commands.Fakes;
 using ScaffoldR.Tests.Infrastructure.CompositionRoot;
-using ScaffoldR.Tests.Infrastructure.Transactions.Fakes;
 using Xunit;
 
 namespace ScaffoldR.Tests.Infrastructure.FluentValidation

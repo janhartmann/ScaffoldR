@@ -1,7 +1,9 @@
 ﻿using System.Reflection;
 using ScaffoldR.Core.Events;
+using ScaffoldR.Core.Queries;
 using ScaffoldR.Core.Transactions;
 using ScaffoldR.Infrastructure.FluentValidation;
+using ScaffoldR.Infrastructure.Queries;
 using ScaffoldR.Infrastructure.Transactions;
 using SimpleInjector;
 

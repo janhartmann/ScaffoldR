@@ -1,4 +1,6 @@
 ﻿using FluentValidation.Results;
+using ScaffoldR.Core.Commands;
+using ScaffoldR.Core.Queries;
 using ScaffoldR.Core.Transactions;
 
 namespace ScaffoldR.Core.Validation

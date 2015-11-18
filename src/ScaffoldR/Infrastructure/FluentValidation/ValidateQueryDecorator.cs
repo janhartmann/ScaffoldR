@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using FluentValidation;
+using ScaffoldR.Core.Queries;
 using ScaffoldR.Core.Transactions;
 
 namespace ScaffoldR.Infrastructure.FluentValidation

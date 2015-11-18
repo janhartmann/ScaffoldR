@@ -2,7 +2,8 @@
 using FluentValidation;
 using ScaffoldR.Core.Validation;
 using ScaffoldR.Infrastructure.FluentValidation;
-using ScaffoldR.Tests.Infrastructure.Transactions.Fakes;
+using ScaffoldR.Tests.Infrastructure.Commands.Fakes;
+using ScaffoldR.Tests.Infrastructure.Queries.Fakes;
 using SimpleInjector;
 using Xunit;
 

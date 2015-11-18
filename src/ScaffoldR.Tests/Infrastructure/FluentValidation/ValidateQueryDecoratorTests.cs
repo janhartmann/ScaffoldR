@@ -3,9 +3,10 @@ using System.Linq.Expressions;
 using FluentValidation;
 using FluentValidation.Results;
 using Moq;
+using ScaffoldR.Core.Queries;
 using ScaffoldR.Core.Transactions;
 using ScaffoldR.Infrastructure.FluentValidation;
-using ScaffoldR.Tests.Infrastructure.Transactions.Fakes;
+using ScaffoldR.Tests.Infrastructure.Queries.Fakes;
 using Xunit;
 
 namespace ScaffoldR.Tests.Infrastructure.FluentValidation
