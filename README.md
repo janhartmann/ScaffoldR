@@ -104,3 +104,33 @@ public class HandleMakeCoffee : IHandleCommand<MakeCoffee>
 	}
 }
 ```
+
+Now that we have our command, its validator and its handler - we can now execute the command from our controllers or other classes by simple depending on the `IHandleCommand<TCommand>` or using the mediators for executing:
+
+```cs
+public class CoffeeController : Controller
+{
+	private readonly IProcessCommands _commands;
+
+	public CoffeeController(IProcessCommands commands)
+	{
+		_commands = commands;
+	}
+
+	[HttpPost]
+	public ActionResult Create()
+	{
+		var cup = new MakeCoffee
+		{
+			Strength = 10,
+			WithMilk = false
+		};
+		
+		// Use the mediator to execute the command
+		_commands.Execute(cup);
+
+		return View();
+	}
+}
+```
+
