@@ -1,5 +1,9 @@
 ﻿namespace ScaffoldR.Core.Events
 {
+    /// <summary>
+    /// Triggers events
+    /// </summary>
+    /// <typeparam name="TEvent"></typeparam>
     public interface ITriggerEvent<in TEvent> where TEvent : IEvent
     {
         /// <summary>
