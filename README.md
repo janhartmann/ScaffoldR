@@ -1,4 +1,4 @@
-# ScaffoldR
+# ScaffoldR [![Build status](https://ci.appveyor.com/api/projects/status/tei7i18ousu5nfjx/branch/master?svg=true)](https://ci.appveyor.com/project/janhartmann/scaffoldr/branch/master)
 
 ScaffoldR is a [SOLID](https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29) platform for structuring or scaffolding .NET applications. ScaffoldR supports commands, queries, events, repositories and validation with intelligent dispatching via C# generic variance.
 
