@@ -1,5 +1,6 @@
 language: csharp
 solution: ScaffoldR.sln
+before_script: cd src
 install:
   - nuget restore ScaffoldR.sln
   - nuget install xunit.runners -Version 2.1.0 -OutputDirectory testrunner
