@@ -4,5 +4,5 @@ install:
   - nuget restore ./src/ScaffoldR.sln
 script:
   - xbuild /p:Configuration=Release ./src/ScaffoldR.sln
-  - mono ./testrunner/xunit.runners.*/tools/xunit.console.clr4.exe ./src/ScaffoldR.Tests/bin/Release/ScaffoldR.Tests.dll
-  - mono ./testrunner/xunit.runners.*/tools/xunit.console.clr4.exe ./src/ScaffoldR.EntityFramework.Tests/bin/Release/ScaffoldR.EntityFramework.Tests.dll
+  - mono ./testrunner/xunit.runner.console.*/tools/xunit.console.clr4.exe ./src/ScaffoldR.Tests/bin/Release/ScaffoldR.Tests.dll
+  - mono ./testrunner/xunit.runner.console.*/tools/xunit.console.clr4.exe ./src/ScaffoldR.EntityFramework.Tests/bin/Release/ScaffoldR.EntityFramework.Tests.dll
