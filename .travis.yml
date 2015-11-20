@@ -3,6 +3,6 @@ solution: ./src/ScaffoldR.sln
 install:
   - nuget restore ./src/ScaffoldR.sln
 script:
-  - xbuild /p:Configuration=Release ./src/ScaffoldR.sln
-  - mono ./src/packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./src/ScaffoldR.Tests/bin/Release/ScaffoldR.Tests.dll
-  - mono ./src/packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./src/ScaffoldR.EntityFramework.Tests/bin/Release/ScaffoldR.EntityFramework.Tests.dll
+  - xbuild /p:Configuration=Release /p:DebugSymbols=False ./src/ScaffoldR.sln 
+  - mono ./src/packages/xunit.runner.console.*/tools/xunit.console.exe ./src/ScaffoldR.Tests/bin/Release/ScaffoldR.Tests.dll
+  - mono ./src/packages/xunit.runner.console.*/tools/xunit.console.exe ./src/ScaffoldR.EntityFramework.Tests/bin/Release/ScaffoldR.EntityFramework.Tests.dll
