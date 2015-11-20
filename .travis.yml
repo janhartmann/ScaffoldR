@@ -2,8 +2,7 @@ language: csharp
 solution: ./src/ScaffoldR.sln
 install:
   - nuget restore ./src/ScaffoldR.sln
-  - nuget install xunit.runners -Version 2.1.0 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release ./src/ScaffoldR.sln
-  - mono ./testrunner/xunit.runners.2.1.0/tools/xunit.console.clr4.exe ./src/ScaffoldR.Tests/bin/Release/ScaffoldR.Tests.dll
-  - mono ./testrunner/xunit.runners.2.1.0/tools/xunit.console.clr4.exe ./src/ScaffoldR.EntityFramework.Tests/bin/Release/ScaffoldR.EntityFramework.Tests.dll
+  - mono ./testrunner/xunit.runners.*/tools/xunit.console.clr4.exe ./src/ScaffoldR.Tests/bin/Release/ScaffoldR.Tests.dll
+  - mono ./testrunner/xunit.runners.*/tools/xunit.console.clr4.exe ./src/ScaffoldR.EntityFramework.Tests/bin/Release/ScaffoldR.EntityFramework.Tests.dll
