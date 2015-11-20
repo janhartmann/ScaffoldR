@@ -12,7 +12,7 @@ It is recommended to have some basic knowledge of CQRS (Command Query Responsibi
 Simple Injector is an easy, flexible and fast dependency injection library which ScaffoldR integrates heavily into.
 
 **[Fluent Validation](https://fluentvalidation.codeplex.com)**<br />
-Fluent Validation (FV) is a small validation library for .NET that uses a fluent interface and lambda expressions for building validation rules for your business objects. Nerve Framework uses FV in its validation processor.
+Fluent Validation (FV) is a small validation library for .NET that uses a fluent interface and lambda expressions for building validation rules for your business objects. ScaffoldR uses FV in its validation processor.
 
 ### Installing ScaffoldR
 
