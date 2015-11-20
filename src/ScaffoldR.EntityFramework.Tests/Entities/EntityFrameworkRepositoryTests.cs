@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using ScaffoldR.EntityFramework.Entities;
 using ScaffoldR.EntityFramework.Tests.Fakes;
@@ -12,151 +13,81 @@ namespace ScaffoldR.EntityFramework.Tests.Entities
         [Fact]
         public void Query_CanGetMultipleReadOnlyEntities_WhichAreNotTrackedByContext()
         {
-            var customers = new List<FakeCustomer>
+           using (var context = new FakeDbContext())
             {
-                new FakeCustomer
-                {
-                    Id = 1,
-                    FirstName = "John",
-                    LastName = "Doe"
-                },
-                 new FakeCustomer
-                {
-                    Id = 2,
-                    FirstName = "John",
-                    LastName = "Smith"
-                }
-            };
-
-            using (var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>())
-            {
-                var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
-                context.Setup(x => x.Set<FakeCustomer>().AsNoTracking()).Returns(dbSet);
-                context.Object.FakeCustomers.AddRange(customers);
-
-                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
+                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context);
                 var customersWithNameJohn = repository.Query().Where(x => x.FirstName == "John").ToList();
 
                 Assert.NotNull(customersWithNameJohn);
                 Assert.Equal(2, customersWithNameJohn.Count);
             }
-          
         }
 
         [Fact]
         public void Get_CanGetWritableEntity_WhenEntityExists()
         {
-            var customers = new List<FakeCustomer>
+            using (var context = new FakeDbContext())
             {
-                new FakeCustomer
-                {
-                    Id = 1,
-                    FirstName = "John",
-                    LastName = "Doe"
-                },
-                 new FakeCustomer
-                {
-                    Id = 2,
-                    FirstName = "John",
-                    LastName = "Smith"
-                }
-            };
-
-            using (var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>())
-            {
-                var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
-                context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
-                context.Object.FakeCustomers.AddRange(customers);
-
-                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
+                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context);
                 var customer = repository.Get(1);
 
                 Assert.NotNull(customer);
-                Assert.Equal(1, customer.Id);
+                Assert.Equal(EntityState.Unchanged, context.Entry(customer).State);
             }
         }
 
         [Fact]
         public void Save_CanCreateEntity_WhenEntityIsNotTrackedByContext()
         {
-            var customers = new List<FakeCustomer>();
-            var customer = new FakeCustomer
+            using (var context = new FakeDbContext())
             {
-                FirstName = "John",
-                LastName = "Doe"
-            };
+                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context);
+                var customer = new FakeCustomer
+                {
+                    FirstName = "John",
+                    LastName = "Doe"
+                };
 
-            using (var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>())
-            {
-                var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
-                context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
-
-                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
                 repository.Save(customer);
 
-                Assert.Equal(1, customers.Count);
+                Assert.Equal(EntityState.Added, context.Entry(customer).State);
             }
         }
 
         [Fact]
         public void Save_CanUpdateEntity_WhenEntityIsTrackedByContext()
         {
-            var customers = new List<FakeCustomer>
+            using (var context = new FakeDbContext())
             {
-                new FakeCustomer
-                {
-                    Id = 1,
-                    FirstName = "John",
-                    LastName = "Doe"
-                }
-            };
-
-            using (var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>())
-            {
-                var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
-                context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
-                context.Object.FakeCustomers.AddRange(customers);
-
-                Assert.Equal("John", context.Object.FakeCustomers.First().FirstName);
-
-                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
+                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context);
                 var customer = repository.Get(1);
+
+                Assert.Equal("John", customer.FirstName);
+
+                // Change name
                 customer.FirstName = "Artina";
 
                 repository.Save(customer);
+                var affectedRows = context.SaveChanges();
 
-                Assert.Equal(1, customers.Count);
-                Assert.Equal("Artina", customers.First().FirstName);
-                Assert.Equal(1, customers.First().Id);
+                Assert.Equal(1, affectedRows);
+                customer = repository.Get(1);
+                Assert.Equal("Artina", customer.FirstName);
             }
         }
 
         [Fact]
         public void Delete_CanMarkEntityForDeletion_WhenEntityExists()
         {
-            var customers = new List<FakeCustomer>
+            using (var context = new FakeDbContext())
             {
-                new FakeCustomer
-                {
-                    Id = 1,
-                    FirstName = "John",
-                    LastName = "Doe"
-                }
-            };
-
-            using (var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>())
-            {
-                var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
-                context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
-                context.Object.FakeCustomers.AddRange(customers);
-
-                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
+                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context);
                 var customer = repository.Get(1);
                 Assert.NotNull(customer);
 
                 repository.Delete(customer);
 
-                Assert.Equal(0, customers.Count);
+                Assert.Equal(EntityState.Deleted, context.Entry(customer).State);
             }
         }
     }

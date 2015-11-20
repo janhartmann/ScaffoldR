@@ -92,6 +92,7 @@
     <Compile Include="Entities\EntityFrameworkUnitOfWorkTests.cs" />
     <Compile Include="Fakes\FakeCustomer.cs" />
     <Compile Include="Fakes\FakeDbContext.cs" />
+    <Compile Include="Fakes\FakeDbContextInitializer.cs" />
     <Compile Include="Helpers\EntityFrameworkMockHelper.cs" />
     <Compile Include="Helpers\MockedDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
