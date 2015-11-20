@@ -6,17 +6,20 @@ Param(
     [boolean]$nuspec = $true,
     [boolean]$publish = $false,
     [boolean]$pack = $false,
-    [string]$outputFolder = "build\packages"
+    [string]$outputFolder = "..\nuget"
 )
 
 # Include build functions
 . "./BuildFunctions.ps1"
 
 # The solution we are building
-$solution = "ScaffoldR.sln"
-$assemblies = "ScaffoldR", "ScaffoldR.EntityFramework"
-$testAssemblies = "ScaffoldR.Tests", "ScaffoldR.EntityFramework.Tests"
-$releaseAssemblies = "ScaffoldR", "ScaffoldR.EntityFramework"
+$solution = "../src/ScaffoldR.sln"
+
+# Assemblies we are releasing
+$assemblies = "../src/ScaffoldR", "../src/ScaffoldR.EntityFramework"
+
+# Test assemblies
+$testAssemblies = "../src/ScaffoldR.Tests", "../src/ScaffoldR.EntityFramework.Tests"
 
 # Start by changing the assembly version
 Write-Host "Changing the assembly versions to '$version'..."
@@ -39,7 +42,7 @@ if ($nuspec) {
 # Pack the assemblies and move to output folder
 if ($pack) {
     Write-Host "Packaging projects..."
-    Get-ChildItem $releaseAssemblies -Filter "ScaffoldR*.csproj" -Recurse | 
+    Get-ChildItem $assemblies -Filter "ScaffoldR*.csproj" -Recurse | 
         % { Invoke-PackNuget $_.FullName $configuration $outputFolder } 
 }
 

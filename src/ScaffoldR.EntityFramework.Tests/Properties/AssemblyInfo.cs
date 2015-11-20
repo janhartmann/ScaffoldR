@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ScaffoldR.EntityFramework.Tests")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Integration library for Entity Framework for ScaffoldR")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Hartmann Solutions")]
 [assembly: AssemblyProduct("ScaffoldR.EntityFramework.Tests")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

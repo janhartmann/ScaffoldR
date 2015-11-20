@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/hartmanns/ScaffoldR</licenseUrl>
+    <projectUrl>https://github.com/hartmanns/ScaffoldR</projectUrl>
+    <iconUrl>http://scaffoldr.hartmanns.io/nuget/nuget-icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>scaffoldr infrastructure scaffolder cqrs inversion dependency injection entity framework</tags>
+    <dependencies>
+      <dependency id="ScaffoldR" version="[1.0.0.0]" />
+    </dependencies>
+  </metadata>
+</package>

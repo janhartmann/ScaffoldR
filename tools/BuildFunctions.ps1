@@ -77,7 +77,7 @@ Function Invoke-PackNuget {
     }
 
     Write-Host "-- Packaging '$project'"
-    Invoke-Expression ".nuget\NuGet.exe pack $project -OutputDirectory '$outputFolder' -Prop Configuration=$configuration"
+    Invoke-Expression "..\tools\NuGet.exe pack $project -OutputDirectory '$outputFolder' -Prop Configuration=$configuration"
 }
 
 Function Publish-NugetPackage() {
