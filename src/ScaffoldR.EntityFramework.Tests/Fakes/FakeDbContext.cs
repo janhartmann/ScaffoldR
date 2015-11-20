@@ -1,9 +1,15 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 
 namespace ScaffoldR.EntityFramework.Tests.Fakes
 {
     public class FakeDbContext : DbContext
     {
         public virtual DbSet<FakeCustomer> FakeCustomers { get; set; }
+
+        public FakeDbContext()
+        {
+            Database.SetInitializer(new DropCreateDatabaseAlways<FakeDbContext>());
+        }
     }
 }
