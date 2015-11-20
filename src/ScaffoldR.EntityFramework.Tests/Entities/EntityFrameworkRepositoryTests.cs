@@ -28,16 +28,19 @@ namespace ScaffoldR.EntityFramework.Tests.Entities
                 }
             };
 
-            var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
-            var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>();
-            context.Setup(x => x.Set<FakeCustomer>().AsNoTracking()).Returns(dbSet);
-            context.Object.FakeCustomers.AddRange(customers);
+            using (var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>())
+            {
+                var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
+                context.Setup(x => x.Set<FakeCustomer>().AsNoTracking()).Returns(dbSet);
+                context.Object.FakeCustomers.AddRange(customers);
 
-            var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
-            var customersWithNameJohn = repository.Query().Where(x => x.FirstName == "John").ToList();
+                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
+                var customersWithNameJohn = repository.Query().Where(x => x.FirstName == "John").ToList();
 
-            Assert.NotNull(customersWithNameJohn);
-            Assert.Equal(2, customersWithNameJohn.Count);
+                Assert.NotNull(customersWithNameJohn);
+                Assert.Equal(2, customersWithNameJohn.Count);
+            }
+          
         }
 
         [Fact]
@@ -59,16 +62,18 @@ namespace ScaffoldR.EntityFramework.Tests.Entities
                 }
             };
 
-            var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
-            var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>();
-            context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
-            context.Object.FakeCustomers.AddRange(customers);
+            using (var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>())
+            {
+                var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
+                context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
+                context.Object.FakeCustomers.AddRange(customers);
 
-            var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
-            var customer = repository.Get(1);
+                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
+                var customer = repository.Get(1);
 
-            Assert.NotNull(customer);
-            Assert.Equal(1, customer.Id);
+                Assert.NotNull(customer);
+                Assert.Equal(1, customer.Id);
+            }
         }
 
         [Fact]
@@ -81,14 +86,16 @@ namespace ScaffoldR.EntityFramework.Tests.Entities
                 LastName = "Doe"
             };
 
-            var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
-            var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>();
-            context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
+            using (var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>())
+            {
+                var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
+                context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
 
-            var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
-            repository.Save(customer);
+                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
+                repository.Save(customer);
 
-            Assert.Equal(1, customers.Count);
+                Assert.Equal(1, customers.Count);
+            }
         }
 
         [Fact]
@@ -104,22 +111,24 @@ namespace ScaffoldR.EntityFramework.Tests.Entities
                 }
             };
 
-            var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
-            var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>();
-            context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
-            context.Object.FakeCustomers.AddRange(customers);
+            using (var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>())
+            {
+                var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
+                context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
+                context.Object.FakeCustomers.AddRange(customers);
 
-            Assert.Equal("John", context.Object.FakeCustomers.First().FirstName);
+                Assert.Equal("John", context.Object.FakeCustomers.First().FirstName);
 
-            var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
-            var customer = repository.Get(1);
-            customer.FirstName = "Artina";
+                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
+                var customer = repository.Get(1);
+                customer.FirstName = "Artina";
 
-            repository.Save(customer);
+                repository.Save(customer);
 
-            Assert.Equal(1, customers.Count);
-            Assert.Equal("Artina", customers.First().FirstName);
-            Assert.Equal(1, customers.First().Id);
+                Assert.Equal(1, customers.Count);
+                Assert.Equal("Artina", customers.First().FirstName);
+                Assert.Equal(1, customers.First().Id);
+            }
         }
 
         [Fact]
@@ -135,18 +144,20 @@ namespace ScaffoldR.EntityFramework.Tests.Entities
                 }
             };
 
-            var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
-            var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>();
-            context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
-            context.Object.FakeCustomers.AddRange(customers);
+            using (var context = EntityFrameworkMockHelper.GetMockContext<FakeDbContext>())
+            {
+                var dbSet = EntityFrameworkMockHelper.MockDbSet(customers);
+                context.Setup(x => x.Set<FakeCustomer>()).Returns(dbSet);
+                context.Object.FakeCustomers.AddRange(customers);
 
-            var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
-            var customer = repository.Get(1);
-            Assert.NotNull(customer);
+                var repository = new EntityFrameworkRepository<FakeCustomer>(() => context.Object);
+                var customer = repository.Get(1);
+                Assert.NotNull(customer);
 
-            repository.Delete(customer);
+                repository.Delete(customer);
 
-            Assert.Equal(0, customers.Count);
+                Assert.Equal(0, customers.Count);
+            }
         }
     }
 }
