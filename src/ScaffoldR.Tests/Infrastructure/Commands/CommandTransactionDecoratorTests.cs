@@ -20,7 +20,7 @@ namespace ScaffoldR.Tests.Infrastructure.Commands
             transactionProcessor.Setup(x => x.Execute());
 
             var decorated = new Mock<IHandleCommand<FakeCommandWithoutValidator>>(MockBehavior.Strict);
-            TypeDescriptor.AddAttributes(decorated.Object.GetType(), new TransactionalAttribute());
+            var typeDescriptionProvider = TypeDescriptor.AddAttributes(decorated.Object.GetType(), new TransactionalAttribute());
             decorated.Setup(x => x.Handle(command));
 
             var decorator = new CommandTransactionDecorator<FakeCommandWithoutValidator>(transactionProcessor.Object, () => decorated.Object);
@@ -28,6 +28,9 @@ namespace ScaffoldR.Tests.Infrastructure.Commands
 
             decorated.Verify(x => x.Handle(command), Times.Once);
             transactionProcessor.Verify(x => x.Execute(), Times.Once);
+            
+            // Clean the provider for next test, or else it will fail - very odd.
+            TypeDescriptor.RemoveProvider(typeDescriptionProvider, decorated.Object.GetType());
         }
 
         [Fact]
