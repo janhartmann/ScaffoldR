@@ -25,7 +25,7 @@ namespace ScaffoldR.Tests.Infrastructure.Queries
             };
 
             var decorated = new Mock<IHandleQuery<FakeQueryWithoutValidator, string>>(MockBehavior.Strict);
-            TypeDescriptor.AddAttributes(decorated.Object.GetType(), attribute);
+            var provider = TypeDescriptor.AddAttributes(decorated.Object.GetType(), attribute);
             decorated.Setup(x => x.Handle(query)).Returns("faked");
 
             var decorator = new QueryEventProcessingDecorator<FakeQueryWithoutValidator, string>(eventProcessor.Object, () => decorated.Object);
@@ -33,6 +33,9 @@ namespace ScaffoldR.Tests.Infrastructure.Queries
 
             decorated.Verify(x => x.Handle(query), Times.Once);
             eventProcessor.Verify(x => x.Raise(query), Times.Once);
+
+            // Clean up runtime added attributes
+            TypeDescriptor.RemoveProvider(provider, decorated.Object.GetType());
         }
 
         [Fact]
@@ -50,7 +53,7 @@ namespace ScaffoldR.Tests.Infrastructure.Queries
             };
 
             var decorated = new Mock<IHandleQuery<FakeQueryWithoutValidator, string>>(MockBehavior.Strict);
-            TypeDescriptor.AddAttributes(decorated.Object.GetType(), attribute);
+            var provider = TypeDescriptor.AddAttributes(decorated.Object.GetType(), attribute);
             decorated.Setup(x => x.Handle(query)).Returns("faked");
 
             var decorator = new QueryEventProcessingDecorator<FakeQueryWithoutValidator, string>(eventProcessor.Object, () => decorated.Object);
@@ -58,6 +61,9 @@ namespace ScaffoldR.Tests.Infrastructure.Queries
 
             decorated.Verify(x => x.Handle(query), Times.Once);
             eventProcessor.Verify(x => x.Raise(It.IsAny<IEvent>()), Times.Never);
+
+            // Clean up runtime added attributes
+            TypeDescriptor.RemoveProvider(provider, decorated.Object.GetType());
         }
 
         [Fact]

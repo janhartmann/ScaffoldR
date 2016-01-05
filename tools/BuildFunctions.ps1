@@ -88,6 +88,6 @@ Function Publish-NugetPackage() {
     )
 
     Write-Host "-- Publishing '$package'"
-    Invoke-Expression ".nuget\NuGet.exe push $package"
+    Invoke-Expression "..\tools\NuGet.exe push $package"
       
 }
