@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
 using ScaffoldR.EntityFramework.Entities;
 using ScaffoldR.EntityFramework.Tests.Fakes;
@@ -11,15 +12,16 @@ namespace ScaffoldR.EntityFramework.Tests.Entities
     public class EntityFrameworkRepositoryTests
     {
         [Fact]
-        public void Query_CanGetMultipleReadOnlyEntities_WhichAreNotTrackedByContext()
+        public void Query_CanGetReadOnlyEntity_WhichAreNotTrackedByContext()
         {
-           using (var context = new FakeDbContext())
+            using (var context = new FakeDbContext())
             {
                 var repository = new EntityFrameworkRepository<FakeCustomer>(() => context);
-                var customersWithNameJohn = repository.Query().Where(x => x.FirstName == "John").ToList();
+                var firstCustomer = repository.Query().First();
+                var isFistCustomerTracked = context.Entry(firstCustomer).State != EntityState.Detached;
 
-                Assert.NotNull(customersWithNameJohn);
-                Assert.Equal(2, customersWithNameJohn.Count);
+                Assert.NotNull(firstCustomer);
+                Assert.Equal(false, isFistCustomerTracked);
             }
         }
 
