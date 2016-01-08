@@ -14,7 +14,7 @@
     <copyright>Copyright 2015</copyright>
     <tags>scaffoldr infrastructure scaffolder cqrs inversion dependency injection entity framework</tags>
     <dependencies>
-      <dependency id="ScaffoldR" version="[1.0.1.0]" />
+      <dependency id="ScaffoldR" version="[1.0.2.0]" />
     </dependencies>
   </metadata>
 </package>
