@@ -18,10 +18,10 @@ namespace ScaffoldR.EntityFramework.Tests.Entities
             {
                 var repository = new EntityFrameworkRepository<FakeCustomer>(() => context);
                 var firstCustomer = repository.Query().First();
-                var isFistCustomerTracked = context.Entry(firstCustomer).State != EntityState.Detached;
+                var isFirstCustomerTrackedByContext = context.Entry(firstCustomer).State != EntityState.Detached;
 
                 Assert.NotNull(firstCustomer);
-                Assert.Equal(false, isFistCustomerTracked);
+                Assert.Equal(false, isFirstCustomerTrackedByContext);
             }
         }
 
