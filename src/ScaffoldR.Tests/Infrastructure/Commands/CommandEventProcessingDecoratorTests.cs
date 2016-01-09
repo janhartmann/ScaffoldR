@@ -25,7 +25,7 @@ namespace ScaffoldR.Tests.Infrastructure.Commands
             };
 
             var decorated = new Mock<IHandleCommand<FakeCommandWithoutValidator>>(MockBehavior.Strict);
-            TypeDescriptor.AddAttributes(decorated.Object.GetType(), attribute);
+            var provider = TypeDescriptor.AddAttributes(decorated.Object.GetType(), attribute);
             decorated.Setup(x => x.Handle(command));
 
             var decorator = new CommandEventProcessingDecorator<FakeCommandWithoutValidator>(eventProcessor.Object, () => decorated.Object);
@@ -33,6 +33,9 @@ namespace ScaffoldR.Tests.Infrastructure.Commands
 
             decorated.Verify(x => x.Handle(command), Times.Once);
             eventProcessor.Verify(x => x.Raise(command), Times.Once);
+
+            // Clean up for next test
+            TypeDescriptor.RemoveProvider(provider, decorated.Object.GetType());
         }
 
         [Fact]
@@ -50,7 +53,7 @@ namespace ScaffoldR.Tests.Infrastructure.Commands
             };
 
             var decorated = new Mock<IHandleCommand<FakeCommandWithoutValidator>>(MockBehavior.Strict);
-            TypeDescriptor.AddAttributes(decorated.Object.GetType(), attribute);
+            var provider = TypeDescriptor.AddAttributes(decorated.Object.GetType(), attribute);
             decorated.Setup(x => x.Handle(command));
 
             var decorator = new CommandEventProcessingDecorator<FakeCommandWithoutValidator>(eventProcessor.Object, () => decorated.Object);
@@ -58,6 +61,9 @@ namespace ScaffoldR.Tests.Infrastructure.Commands
 
             decorated.Verify(x => x.Handle(command), Times.Once);
             eventProcessor.Verify(x => x.Raise(It.IsAny<IEvent>()), Times.Never);
+
+            // Clean up for next test
+            TypeDescriptor.RemoveProvider(provider, decorated.Object.GetType());
         }
 
         [Fact]
