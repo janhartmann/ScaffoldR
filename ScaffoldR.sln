@@ -3,13 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ScaffoldR", "ScaffoldR\ScaffoldR.xproj", "{5C4F5A94-D0E2-4E4B-BFD1-07A25AA7AE22}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0FAE485C-5A59-49FA-8B05-D8C94E881FFF}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ScaffoldR.EntityFramework", "ScaffoldR.EntityFramework\ScaffoldR.EntityFramework.xproj", "{7C47E456-5FDE-483C-ACF8-F422D9068B5E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B48A7B43-5E5A-4022-86A7-A02C179035AD}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ScaffoldR.Tests", "ScaffoldR.Tests\ScaffoldR.Tests.xproj", "{C0A33B80-3526-438C-BD90-AD156120AB5A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DBBC0543-0F67-4D26-A0F8-4A6784F7D214}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		global.json = global.json
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ScaffoldR.EntityFramework.Tests", "ScaffoldR.EntityFramework.Tests\ScaffoldR.EntityFramework.Tests.xproj", "{08901C3A-8BA1-4A7A-9FF9-B692829E8247}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ScaffoldR", "src\ScaffoldR\ScaffoldR.xproj", "{5C4F5A94-D0E2-4E4B-BFD1-07A25AA7AE22}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ScaffoldR.EntityFramework", "src\ScaffoldR.EntityFramework\ScaffoldR.EntityFramework.xproj", "{7C47E456-5FDE-483C-ACF8-F422D9068B5E}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ScaffoldR.Tests", "test\ScaffoldR.Tests\ScaffoldR.Tests.xproj", "{C0A33B80-3526-438C-BD90-AD156120AB5A}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ScaffoldR.EntityFramework.Tests", "test\ScaffoldR.EntityFramework.Tests\ScaffoldR.EntityFramework.Tests.xproj", "{08901C3A-8BA1-4A7A-9FF9-B692829E8247}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +49,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5C4F5A94-D0E2-4E4B-BFD1-07A25AA7AE22} = {0FAE485C-5A59-49FA-8B05-D8C94E881FFF}
+		{7C47E456-5FDE-483C-ACF8-F422D9068B5E} = {0FAE485C-5A59-49FA-8B05-D8C94E881FFF}
+		{C0A33B80-3526-438C-BD90-AD156120AB5A} = {B48A7B43-5E5A-4022-86A7-A02C179035AD}
+		{08901C3A-8BA1-4A7A-9FF9-B692829E8247} = {B48A7B43-5E5A-4022-86A7-A02C179035AD}
 	EndGlobalSection
 EndGlobal
