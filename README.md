@@ -1,4 +1,4 @@
-# ScaffoldR [![AppVeyor](https://img.shields.io/appveyor/ci/janhartmann/scaffoldr.svg)](https://ci.appveyor.com/project/janhartmann/scaffoldr/branch/master) [![NuGet Version](http://img.shields.io/nuget/v/ScaffoldR.svg?style=flat)](https://www.nuget.org/packages/ScaffoldR/)
+# ScaffoldR [![AppVeyor](https://img.shields.io/appveyor/ci/janhartmann/scaffoldr/master.svg)](https://ci.appveyor.com/project/janhartmann/scaffoldr/branch/master) [![NuGet Version](http://img.shields.io/nuget/v/ScaffoldR.svg?style=flat)](https://www.nuget.org/packages/ScaffoldR/)
 
 ScaffoldR is a [SOLID](https://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29) platform for structuring or scaffolding .NET applications. ScaffoldR supports commands, queries, events, repositories and validation with intelligent dispatching via C# generic variance.
 
