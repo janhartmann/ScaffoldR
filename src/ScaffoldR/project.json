@@ -2,9 +2,9 @@
   "version": "2.0.0-*",
   "description": "ScaffoldR is a SOLID platform for structuring or scaffolding .NET applications. ScaffoldR supports commands, queries, events, repositories and validation with intelligent dispatching via C# generic variance.",
   "authors": [ "Hartmann Solutions" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
+  "tags": [ "scaffoldr infrastructure scaffolder cqrs inversion dependency injection" ],
+  "projectUrl": "https://github.com/hartmanns/ScaffoldR",
+  "licenseUrl": "https://github.com/hartmanns/ScaffoldR",
   "dependencies": {
     "SimpleInjector": "3.1.2",
     "SimpleInjector.Extensions.LifetimeScoping": "3.1.2",
@@ -13,7 +13,7 @@
   "frameworks": {
     "dnx46": {
       "dependencies": {
-       
+
       }
     }
   }
