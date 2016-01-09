@@ -2,6 +2,368 @@
   "locked": false,
   "version": 2,
   "targets": {
+    "DNX,Version=v4.5.1": {
+      "EntityFramework/6.1.3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
+        }
+      },
+      "FluentValidation/6.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Net45/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/FluentValidation.dll": {}
+        },
+        "resource": {
+          "lib/Net45/cs/FluentValidation.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/Net45/da/FluentValidation.resources.dll": {
+            "locale": "da"
+          },
+          "lib/Net45/de/FluentValidation.resources.dll": {
+            "locale": "de"
+          },
+          "lib/Net45/es/FluentValidation.resources.dll": {
+            "locale": "es"
+          },
+          "lib/Net45/fi/FluentValidation.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/Net45/fr/FluentValidation.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/Net45/it/FluentValidation.resources.dll": {
+            "locale": "it"
+          },
+          "lib/Net45/ko/FluentValidation.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/Net45/mk/FluentValidation.resources.dll": {
+            "locale": "mk"
+          },
+          "lib/Net45/nl/FluentValidation.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/Net45/pl/FluentValidation.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/Net45/pt/FluentValidation.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/Net45/ru/FluentValidation.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/Net45/sv/FluentValidation.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/Net45/tr/FluentValidation.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/Net45/zh-CN/FluentValidation.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "Microsoft.Dnx.Compilation.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Dnx.Compilation.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Dnx.Compilation.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Dnx.TestHost/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Dnx.Compilation.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Testing.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Runtime",
+          "System.Threading.Tasks"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Dnx.TestHost.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Dnx.TestHost.dll": {}
+        }
+      },
+      "Microsoft.Dnx.Testing.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Dnx.Testing.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Dnx.Testing.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections.Concurrent",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.Logging.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        }
+      },
+      "Moq/4.2.1510.2205": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Moq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Moq.dll": {}
+        }
+      },
+      "Newtonsoft.Json/7.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "ScaffoldR/2.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "FluentValidation": "6.0.2",
+          "SimpleInjector": "3.1.2",
+          "SimpleInjector.Extensions.LifetimeScoping": "3.1.2"
+        }
+      },
+      "ScaffoldR.EntityFramework/2.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework": "6.1.3",
+          "ScaffoldR": "2.0.0",
+          "SimpleInjector": "3.1.2"
+        }
+      },
+      "SimpleInjector/3.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SimpleInjector.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SimpleInjector.dll": {}
+        }
+      },
+      "SimpleInjector.Extensions.LifetimeScoping/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "SimpleInjector": "3.1.2"
+        },
+        "compile": {
+          "lib/dotnet/SimpleInjector.Extensions.LifetimeScoping.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/SimpleInjector.Extensions.LifetimeScoping.dll": {}
+        }
+      },
+      "xunit/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.assert": "[2.1.0]",
+          "xunit.core": "[2.1.0]"
+        }
+      },
+      "xunit.abstractions/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.assert/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]",
+          "xunit.extensibility.execution": "[2.1.0]"
+        }
+      },
+      "xunit.extensibility.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dotnet/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.core.dll": {},
+          "lib/dotnet/xunit.runner.tdnet.dll": {},
+          "lib/dotnet/xunit.runner.utility.desktop.dll": {}
+        }
+      },
+      "xunit.extensibility.execution/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.execution.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.execution.dotnet.dll": {}
+        }
+      },
+      "xunit.runner.dnx/2.1.0-rc1-build204": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Dnx.TestHost": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Testing.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
+          "xunit.runner.reporters": "2.1.0"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections",
+          "System.Core",
+          "System.Threading",
+          "System.Xml",
+          "System.Xml.Linq",
+          "System.Xml.XDocument"
+        ],
+        "compile": {
+          "lib/dnx451/xunit.runner.dnx.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.dnx.dll": {}
+        }
+      },
+      "xunit.runner.reporters/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1",
+          "xunit.runner.utility": "[2.1.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.runner.reporters.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.reporters.dotnet.dll": {}
+        }
+      },
+      "xunit.runner.utility/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
+        }
+      }
+    },
     "DNX,Version=v4.6": {
       "EntityFramework/6.1.3": {
         "type": "package",
@@ -227,6 +589,730 @@
       "ScaffoldR.EntityFramework/2.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.6",
+        "dependencies": {
+          "EntityFramework": "6.1.3",
+          "ScaffoldR": "2.0.0",
+          "SimpleInjector": "3.1.2"
+        }
+      },
+      "SimpleInjector/3.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SimpleInjector.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SimpleInjector.dll": {}
+        }
+      },
+      "SimpleInjector.Extensions.LifetimeScoping/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "SimpleInjector": "3.1.2"
+        },
+        "compile": {
+          "lib/dotnet/SimpleInjector.Extensions.LifetimeScoping.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/SimpleInjector.Extensions.LifetimeScoping.dll": {}
+        }
+      },
+      "xunit/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.assert": "[2.1.0]",
+          "xunit.core": "[2.1.0]"
+        }
+      },
+      "xunit.abstractions/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.assert/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]",
+          "xunit.extensibility.execution": "[2.1.0]"
+        }
+      },
+      "xunit.extensibility.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dotnet/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.core.dll": {},
+          "lib/dotnet/xunit.runner.tdnet.dll": {},
+          "lib/dotnet/xunit.runner.utility.desktop.dll": {}
+        }
+      },
+      "xunit.extensibility.execution/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.execution.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.execution.dotnet.dll": {}
+        }
+      },
+      "xunit.runner.dnx/2.1.0-rc1-build204": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Dnx.TestHost": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Testing.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
+          "xunit.runner.reporters": "2.1.0"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections",
+          "System.Core",
+          "System.Threading",
+          "System.Xml",
+          "System.Xml.Linq",
+          "System.Xml.XDocument"
+        ],
+        "compile": {
+          "lib/dnx451/xunit.runner.dnx.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.dnx.dll": {}
+        }
+      },
+      "xunit.runner.reporters/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1",
+          "xunit.runner.utility": "[2.1.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.runner.reporters.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.reporters.dotnet.dll": {}
+        }
+      },
+      "xunit.runner.utility/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x86": {
+      "EntityFramework/6.1.3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
+        }
+      },
+      "FluentValidation/6.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Net45/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/FluentValidation.dll": {}
+        },
+        "resource": {
+          "lib/Net45/cs/FluentValidation.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/Net45/da/FluentValidation.resources.dll": {
+            "locale": "da"
+          },
+          "lib/Net45/de/FluentValidation.resources.dll": {
+            "locale": "de"
+          },
+          "lib/Net45/es/FluentValidation.resources.dll": {
+            "locale": "es"
+          },
+          "lib/Net45/fi/FluentValidation.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/Net45/fr/FluentValidation.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/Net45/it/FluentValidation.resources.dll": {
+            "locale": "it"
+          },
+          "lib/Net45/ko/FluentValidation.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/Net45/mk/FluentValidation.resources.dll": {
+            "locale": "mk"
+          },
+          "lib/Net45/nl/FluentValidation.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/Net45/pl/FluentValidation.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/Net45/pt/FluentValidation.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/Net45/ru/FluentValidation.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/Net45/sv/FluentValidation.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/Net45/tr/FluentValidation.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/Net45/zh-CN/FluentValidation.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "Microsoft.Dnx.Compilation.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Dnx.Compilation.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Dnx.Compilation.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Dnx.TestHost/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Dnx.Compilation.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Testing.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Runtime",
+          "System.Threading.Tasks"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Dnx.TestHost.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Dnx.TestHost.dll": {}
+        }
+      },
+      "Microsoft.Dnx.Testing.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Dnx.Testing.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Dnx.Testing.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections.Concurrent",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.Logging.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        }
+      },
+      "Moq/4.2.1510.2205": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Moq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Moq.dll": {}
+        }
+      },
+      "Newtonsoft.Json/7.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "ScaffoldR/2.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "FluentValidation": "6.0.2",
+          "SimpleInjector": "3.1.2",
+          "SimpleInjector.Extensions.LifetimeScoping": "3.1.2"
+        }
+      },
+      "ScaffoldR.EntityFramework/2.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "EntityFramework": "6.1.3",
+          "ScaffoldR": "2.0.0",
+          "SimpleInjector": "3.1.2"
+        }
+      },
+      "SimpleInjector/3.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SimpleInjector.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SimpleInjector.dll": {}
+        }
+      },
+      "SimpleInjector.Extensions.LifetimeScoping/3.1.2": {
+        "type": "package",
+        "dependencies": {
+          "SimpleInjector": "3.1.2"
+        },
+        "compile": {
+          "lib/dotnet/SimpleInjector.Extensions.LifetimeScoping.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/SimpleInjector.Extensions.LifetimeScoping.dll": {}
+        }
+      },
+      "xunit/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.assert": "[2.1.0]",
+          "xunit.core": "[2.1.0]"
+        }
+      },
+      "xunit.abstractions/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.assert/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]",
+          "xunit.extensibility.execution": "[2.1.0]"
+        }
+      },
+      "xunit.extensibility.core/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dotnet/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.core.dll": {},
+          "lib/dotnet/xunit.runner.tdnet.dll": {},
+          "lib/dotnet/xunit.runner.utility.desktop.dll": {}
+        }
+      },
+      "xunit.extensibility.execution/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.execution.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.execution.dotnet.dll": {}
+        }
+      },
+      "xunit.runner.dnx/2.1.0-rc1-build204": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Dnx.TestHost": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Testing.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
+          "xunit.runner.reporters": "2.1.0"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections",
+          "System.Core",
+          "System.Threading",
+          "System.Xml",
+          "System.Xml.Linq",
+          "System.Xml.XDocument"
+        ],
+        "compile": {
+          "lib/dnx451/xunit.runner.dnx.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.dnx.dll": {}
+        }
+      },
+      "xunit.runner.reporters/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1",
+          "xunit.runner.utility": "[2.1.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.runner.reporters.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.reporters.dotnet.dll": {}
+        }
+      },
+      "xunit.runner.utility/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x64": {
+      "EntityFramework/6.1.3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.dll": {},
+          "lib/net45/EntityFramework.SqlServer.dll": {}
+        }
+      },
+      "FluentValidation/6.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Net45/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/Net45/FluentValidation.dll": {}
+        },
+        "resource": {
+          "lib/Net45/cs/FluentValidation.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/Net45/da/FluentValidation.resources.dll": {
+            "locale": "da"
+          },
+          "lib/Net45/de/FluentValidation.resources.dll": {
+            "locale": "de"
+          },
+          "lib/Net45/es/FluentValidation.resources.dll": {
+            "locale": "es"
+          },
+          "lib/Net45/fi/FluentValidation.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/Net45/fr/FluentValidation.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/Net45/it/FluentValidation.resources.dll": {
+            "locale": "it"
+          },
+          "lib/Net45/ko/FluentValidation.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/Net45/mk/FluentValidation.resources.dll": {
+            "locale": "mk"
+          },
+          "lib/Net45/nl/FluentValidation.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/Net45/pl/FluentValidation.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/Net45/pt/FluentValidation.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/Net45/ru/FluentValidation.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/Net45/sv/FluentValidation.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/Net45/tr/FluentValidation.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/Net45/zh-CN/FluentValidation.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "Microsoft.Dnx.Compilation.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Dnx.Compilation.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Dnx.Compilation.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Dnx.TestHost/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Dnx.Compilation.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Dnx.Testing.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Runtime",
+          "System.Threading.Tasks"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Dnx.TestHost.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Dnx.TestHost.dll": {}
+        }
+      },
+      "Microsoft.Dnx.Testing.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Dnx.Testing.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Dnx.Testing.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections.Concurrent",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.Logging.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
+        }
+      },
+      "Moq/4.2.1510.2205": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Moq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Moq.dll": {}
+        }
+      },
+      "Newtonsoft.Json/7.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "ScaffoldR/2.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
+        "dependencies": {
+          "FluentValidation": "6.0.2",
+          "SimpleInjector": "3.1.2",
+          "SimpleInjector.Extensions.LifetimeScoping": "3.1.2"
+        }
+      },
+      "ScaffoldR.EntityFramework/2.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1",
         "dependencies": {
           "EntityFramework": "6.1.3",
           "ScaffoldR": "2.0.0",
@@ -1534,6 +2620,7 @@
       "SimpleInjector >= 3.1.2",
       "SimpleInjector.Extensions.LifetimeScoping >= 3.1.2"
     ],
+    "DNX,Version=v4.5.1": [],
     "DNX,Version=v4.6": [
       "fx/System.Runtime ",
       "fx/System.Threading.Tasks "

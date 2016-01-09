@@ -11,10 +11,10 @@
     "FluentValidation": "6.0.2"
   },
   "frameworks": {
-    "dnx46": {
-      "dependencies": {
+    "dnx451": {
 
-      }
+    },
+    "dnx46": {
     }
   }
 }

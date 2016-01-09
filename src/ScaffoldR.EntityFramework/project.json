@@ -11,6 +11,9 @@
     "ScaffoldR": "2.0.0-*"
   },
   "frameworks": {
+    "dnx451": {
+
+    },
     "dnx46": {
 
     }
